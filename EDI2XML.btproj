@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A98A6368-350D-4EF0-A026-AB17ABF5F93F}</ProjectGuid>
+    <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>EDI2XML</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Schema Include="ProductSchema.xsd">
+      <SubType>Designer</SubType>
+      <TypeName>Schema1</TypeName>
+      <Namespace>EDI2XML</Namespace>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="X12_00401_852.xsd">
+      <TypeName>X12_00401_852</TypeName>
+      <Namespace>EDI2XML</Namespace>
+      <SubType>Designer</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="TestSchema.xsd">
+      <SubType>Designer</SubType>
+      <TypeName>Schema1</TypeName>
+      <Namespace>EDI2XML</Namespace>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="X12_00403_852.xsd">
+      <TypeName>X12_00403_852</TypeName>
+      <Namespace>EDI2XML</Namespace>
+      <SubType>Designer</SubType>
+    </Schema>
+    <Schema Include="X12_00501_852.xsd">
+      <TypeName>X12_00501_852</TypeName>
+      <Namespace>EDI2XML</Namespace>
+      <SubType>Designer</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="403Map.btm">
+      <SubType>Task</SubType>
+      <TypeName>_403Map</TypeName>
+      <Namespace>EDI2XML</Namespace>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="401Map.btm">
+      <SubType>Task</SubType>
+      <TypeName>_401Map</TypeName>
+      <Namespace>EDI2XML</Namespace>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Map1.btm">
+      <TypeName>Map1</TypeName>
+      <Namespace>EDI2XML</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="XMLFile11.xsd">
+      <TypeName>XMLFile11</TypeName>
+      <Namespace>EDI2XML</Namespace>
+      <SubType>Designer</SubType>
+    </Schema>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.CurrentVersion.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Azure Integration SDK\IntegrationTasks.targets" />
+</Project>
